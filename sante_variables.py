@@ -16,7 +16,7 @@ SEUIL_MORTALITE_ALERTE = 2.0      # Seuil d'alerte en %
 SEUIL_RUPTURE_STOCK_JOURS = 30    # Jours minimum de stock
 
 # Liste des 12 départements de la République du Congo
-DEPARTEMENTS_CONGO = [
+ DEPARTEMENTS_CONGO = [
     'Brazzaville', 'Pointe-Noire', 'Bouenza', 'Cuvette',
     'Cuvette-Ouest', 'Kouilou', 'Lekoumou', 'Likouala',
     'Niari', 'Plateaux', 'Pool', 'Sangha'
