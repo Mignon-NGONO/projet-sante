@@ -41,7 +41,7 @@ if m1_stock <= m1_seuil_rupture:
      m1_action  = 'Alerte immediate PNA — commande express sous 24h'
 elif m1_stock <= m1_seuil_rupture * 1.5:
       m1_statut  = "ALERTE STOCK"
-      m1_couleur = "ORANGE"
+      m1_couleur = "RORANGE"
       m1_action  ="Commande urgente a declencher sous 72h"
 elif m1_stock <= m1_seuil_rupture * 2.0:
        m1_statut  ="STOCK LIMITE"
@@ -169,4 +169,45 @@ if m5_statut == 'RUPTURE CRITIQUE':
 elif m5_statut == 'ALERTE STOCK':
     nb_alertes_stock = nb_alertes_stock + 1 
 
+#---AFFICHAGE RAPPORT ---
+#S2 (Reutilise) :f-strings structurees
+#S3 (nouveau) : statuts et couleurs determines par les conditions
+print('=' * 65)
+print('  RAPPORT DE STOCK — PHARMACIE NATIONALE DAPPROVISIONNEMENT')
+print('  Date : 15 janvier 2026')
+print('=' * 65)
+# TODO : Afficher les 5 medicaments avec leur statut
+print(f'  {m1_couleur} {m1_nom}')
+print(f'      Stock : {m1_stock} unites | Seuil : {m1_seuil_rupture}')
+print(f'      Statut : {m1_statut}')
+print(f'      Action : {m1_action}')
+print('_' * 65)
+print(f'  {m2_couleur} {m2_nom}')
+print(f'      Stock : {m2_stock} unites | Seuil : {m2_seuil_rupture}')
+print(f'      Statut : {m2_statut}')
+print(f'      Action : {m2_action}')
+print('_' * 65)
+print(f'  {m3_couleur} {m3_nom}')
+print(f'      Stock : {m3_stock} unites | Seuil : {m3_seuil_rupture}')
+print(f'      Statut : {m3_statut}')
+print(f'      Action : {m3_action}')
+print('_' * 65)
+print(f'  {m4_couleur} {m4_nom}')
+print(f'      Stock : {m4_stock} unites | Seuil : {m4_seuil_rupture}')
+print(f'      Statut : {m4_statut}')
+print(f'      Action : {m4_action}')
+print('_' * 65) 
+print(f'  {m5_couleur} {m5_nom}')
+print(f'      Stock : {m5_stock} unites | Seuil : {m5_seuil_rupture}')
+print(f'      Statut : {m5_statut}')
+print(f'      Action : {m5_action}')
+# TODO : Afficher le bilan final (compteurs + alerte prioritaire)
+print('=' * 65)
+print("BILAN STOCK - PNA CONGO")
+print(f"  ruptures critiques  : {nb_ruptures_critiques} (SRO ,Vaccin DTP)")
+print(f" ALERTES STOCK        : {nb_alertes_stock} (Artemether ,Amoxicilline)")
+print(f"  Stocks normaux        : {5 - nb_ruptures_critiques - nb_alertes_stock} (Paracetamol)")
+print('=' * 65)
+print(f"!! ALERTE PRIORITAIRE  : {nb_ruptures_critiques} medicaments en RUPTURE CRIIQUE !!")
+print("transmettre imediatement au Dr.MOUKALA (PNA)")
 
